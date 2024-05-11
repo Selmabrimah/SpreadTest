@@ -1,0 +1,772 @@
+{
+  "stats": {
+    "suites": 9,
+    "tests": 18,
+    "passes": 12,
+    "pending": 0,
+    "failures": 6,
+    "testsRegistered": 18,
+    "passPercent": 66.66666666666667,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2024-05-11T14:26:04.979Z",
+    "end": "2024-05-11T14:41:09.579Z",
+    "duration": 904600
+  },
+  "results": [
+    {
+      "uuid": "ecae08c7-5859-442b-85dc-1a0acdd2b944",
+      "title": "",
+      "fullFile": "cypress/e2e/login.cy.js",
+      "file": "cypress/e2e/login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "90fe308c-38e7-4a35-8c27-d3450ccb8f5c",
+          "title": "Login Feature",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify User Can Login with right Credentials",
+              "fullTitle": "Login Feature Verify User Can Login with right Credentials",
+              "timedOut": null,
+              "duration": 2844,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get('[src=\"/web/images/ohrm_branding.png?v=1711595107870\"]').should('be.visible');\ncy.get('[placeholder=\"Username\"]').type('Admin');\ncy.get('[placeholder=\"Password\"]').type('admin123');\ncy.get('[type=\"submit\"]').click();\ncy.url().should('include', 'dashboard');",
+              "err": {},
+              "uuid": "01fdc8bc-9e8d-46a1-abe0-a27ca84a88a9",
+              "parentUUID": "90fe308c-38e7-4a35-8c27-d3450ccb8f5c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify User Cannot Login with wrong Credentials",
+              "fullTitle": "Login Feature Verify User Cannot Login with wrong Credentials",
+              "timedOut": null,
+              "duration": 1553,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get('[src=\"/web/images/ohrm_branding.png?v=1711595107870\"]').should('be.visible');\ncy.get('[placeholder=\"Username\"]').type('Admin123');\ncy.get('[placeholder=\"Password\"]').type('admin123');\ncy.get('[type=\"submit\"]').click();\ncy.url().should('include', 'auth/login');",
+              "err": {},
+              "uuid": "e0fd22b9-5abf-4923-9acf-67da835467a3",
+              "parentUUID": "90fe308c-38e7-4a35-8c27-d3450ccb8f5c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "01fdc8bc-9e8d-46a1-abe0-a27ca84a88a9",
+            "e0fd22b9-5abf-4923-9acf-67da835467a3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4397,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "6b8177ed-e481-4364-8421-3b44ce24b413",
+      "title": "",
+      "fullFile": "cypress/e2e/loginWithCypressCommand.cy.js",
+      "file": "cypress/e2e/loginWithCypressCommand.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "88c23911-68fb-4988-ba57-3464c9e30309",
+          "title": "Login Feature With the use of cypress Command",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify User Can Login with right Credentials",
+              "fullTitle": "Login Feature With the use of cypress Command Verify User Can Login with right Credentials",
+              "timedOut": null,
+              "duration": 7728,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.login(Cypress.env('USERNAME'), Cypress.env('PASSWORD'));\nloginPage.verifyLoginSuccess();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<p.oxd-userdropdown-name>' to contain text 'user', but the text was 'Alaa Tester'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<p.oxd-userdropdown-name>' to contain text 'user', but the text was 'Alaa Tester'\n    at LoginPage.verifyLoginSuccess (webpack://spreadtest/./cypress/support/POM/loginData.js:21:50)\n    at Context.eval (webpack://spreadtest/./cypress/e2e/loginWithCypressCommand.cy.js:9:18)",
+                "diff": "- 'Alaa Tester'\n+ 'user'\n"
+              },
+              "uuid": "93c5396f-18d4-4a44-b557-dad65fa2d9e6",
+              "parentUUID": "88c23911-68fb-4988-ba57-3464c9e30309",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify User Cannot Login with wrong Credentials",
+              "fullTitle": "Login Feature With the use of cypress Command Verify User Cannot Login with wrong Credentials",
+              "timedOut": null,
+              "duration": 1902,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const username = 'Admin';\nconst password = 'admin';\ncy.login(username, password);\nloginPage.verifyLoginFailure();",
+              "err": {},
+              "uuid": "3ddbf368-c7ab-4b1b-94f1-52538b869b2a",
+              "parentUUID": "88c23911-68fb-4988-ba57-3464c9e30309",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3ddbf368-c7ab-4b1b-94f1-52538b869b2a"
+          ],
+          "failures": [
+            "93c5396f-18d4-4a44-b557-dad65fa2d9e6"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 9630,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "54c0d162-fb15-44e4-ac88-21dafb483216",
+      "title": "",
+      "fullFile": "cypress/e2e/loginWithPom.cy.js",
+      "file": "cypress/e2e/loginWithPom.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "534adc64-0508-46e0-85e8-6be53ec670bd",
+          "title": "Login Feature With POM",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify User Can Login with right Credentials",
+              "fullTitle": "Login Feature With POM Verify User Can Login with right Credentials",
+              "timedOut": null,
+              "duration": 6593,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.visitLoginPage();\nloginPage.fillLoginValuesAndClickBtn(Cypress.env('USERNAME'), Cypress.env('PASSWORD'));\nloginPage.verifyLoginSuccess();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<p.oxd-userdropdown-name>' to contain text 'user', but the text was 'Alaa Tester'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<p.oxd-userdropdown-name>' to contain text 'user', but the text was 'Alaa Tester'\n    at LoginPage.verifyLoginSuccess (webpack://spreadtest/./cypress/support/POM/loginData.js:21:50)\n    at Context.eval (webpack://spreadtest/./cypress/e2e/loginWithPom.cy.js:11:18)",
+                "diff": "- 'Alaa Tester'\n+ 'user'\n"
+              },
+              "uuid": "a5df7e55-b10f-475c-b9fe-c187028c408a",
+              "parentUUID": "534adc64-0508-46e0-85e8-6be53ec670bd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify User Cannot Login with wrong Credentials",
+              "fullTitle": "Login Feature With POM Verify User Cannot Login with wrong Credentials",
+              "timedOut": null,
+              "duration": 2034,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.visitLoginPage();\nloginPage.fillLoginValuesAndClickBtn('Admin', 'Admin');\nloginPage.verifyLoginFailure();",
+              "err": {},
+              "uuid": "7c3da6d9-dee8-4023-9c1f-2ff4f49be45b",
+              "parentUUID": "534adc64-0508-46e0-85e8-6be53ec670bd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7c3da6d9-dee8-4023-9c1f-2ff4f49be45b"
+          ],
+          "failures": [
+            "a5df7e55-b10f-475c-b9fe-c187028c408a"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 8627,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "2282ef8f-5d4d-43da-a514-abfb6cc66fd2",
+      "title": "",
+      "fullFile": "cypress/e2e/login.cy.js",
+      "file": "cypress/e2e/login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "81687b07-0d62-4cb9-a3c3-ff7a60195505",
+          "title": "Login Feature",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify User Can Login with right Credentials",
+              "fullTitle": "Login Feature Verify User Can Login with right Credentials",
+              "timedOut": null,
+              "duration": 2828,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get('[src=\"/web/images/ohrm_branding.png?v=1711595107870\"]').should('be.visible');\ncy.get('[placeholder=\"Username\"]').type('Admin');\ncy.get('[placeholder=\"Password\"]').type('admin123');\ncy.get('[type=\"submit\"]').click();\ncy.url().should('include', 'dashboard');",
+              "err": {},
+              "uuid": "783ed85a-4aea-428c-880a-b900f820548e",
+              "parentUUID": "81687b07-0d62-4cb9-a3c3-ff7a60195505",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify User Cannot Login with wrong Credentials",
+              "fullTitle": "Login Feature Verify User Cannot Login with wrong Credentials",
+              "timedOut": null,
+              "duration": 1539,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get('[src=\"/web/images/ohrm_branding.png?v=1711595107870\"]').should('be.visible');\ncy.get('[placeholder=\"Username\"]').type('Admin123');\ncy.get('[placeholder=\"Password\"]').type('admin123');\ncy.get('[type=\"submit\"]').click();\ncy.url().should('include', 'auth/login');",
+              "err": {},
+              "uuid": "406b7f78-1176-47fe-8620-091be77b5344",
+              "parentUUID": "81687b07-0d62-4cb9-a3c3-ff7a60195505",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "783ed85a-4aea-428c-880a-b900f820548e",
+            "406b7f78-1176-47fe-8620-091be77b5344"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4367,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "ee50fa12-7695-45c5-9278-539158e47c8e",
+      "title": "",
+      "fullFile": "cypress/e2e/loginWithCypressCommand.cy.js",
+      "file": "cypress/e2e/loginWithCypressCommand.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "51d60d7a-dda0-43f7-aad3-35c51f816bf1",
+          "title": "Login Feature With the use of cypress Command",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify User Can Login with right Credentials",
+              "fullTitle": "Login Feature With the use of cypress Command Verify User Can Login with right Credentials",
+              "timedOut": null,
+              "duration": 8593,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.login(Cypress.env('USERNAME'), Cypress.env('PASSWORD'));\nloginPage.verifyLoginSuccess();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<p.oxd-userdropdown-name>' to contain text 'user', but the text was 'Alaa Tester'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<p.oxd-userdropdown-name>' to contain text 'user', but the text was 'Alaa Tester'\n    at LoginPage.verifyLoginSuccess (webpack://spreadtest/./cypress/support/POM/loginData.js:21:50)\n    at Context.eval (webpack://spreadtest/./cypress/e2e/loginWithCypressCommand.cy.js:9:18)",
+                "diff": "- 'Alaa Tester'\n+ 'user'\n"
+              },
+              "uuid": "b8837de9-a490-48f5-ae18-a21c7697b31e",
+              "parentUUID": "51d60d7a-dda0-43f7-aad3-35c51f816bf1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify User Cannot Login with wrong Credentials",
+              "fullTitle": "Login Feature With the use of cypress Command Verify User Cannot Login with wrong Credentials",
+              "timedOut": null,
+              "duration": 3036,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const username = 'Admin';\nconst password = 'admin';\ncy.login(username, password);\nloginPage.verifyLoginFailure();",
+              "err": {},
+              "uuid": "ce93701d-dda8-4702-b3fa-afcc936995fb",
+              "parentUUID": "51d60d7a-dda0-43f7-aad3-35c51f816bf1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ce93701d-dda8-4702-b3fa-afcc936995fb"
+          ],
+          "failures": [
+            "b8837de9-a490-48f5-ae18-a21c7697b31e"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 11629,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "a0f7adec-e047-41c4-bb51-8e7a2c9d601a",
+      "title": "",
+      "fullFile": "cypress/e2e/loginWithPom.cy.js",
+      "file": "cypress/e2e/loginWithPom.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0223b639-7ce5-4c32-a74d-dd4defc89f70",
+          "title": "Login Feature With POM",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify User Can Login with right Credentials",
+              "fullTitle": "Login Feature With POM Verify User Can Login with right Credentials",
+              "timedOut": null,
+              "duration": 7692,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.visitLoginPage();\nloginPage.fillLoginValuesAndClickBtn(Cypress.env('USERNAME'), Cypress.env('PASSWORD'));\nloginPage.verifyLoginSuccess();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<p.oxd-userdropdown-name>' to contain text 'user', but the text was 'Alaa Tester'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<p.oxd-userdropdown-name>' to contain text 'user', but the text was 'Alaa Tester'\n    at LoginPage.verifyLoginSuccess (webpack://spreadtest/./cypress/support/POM/loginData.js:21:50)\n    at Context.eval (webpack://spreadtest/./cypress/e2e/loginWithPom.cy.js:11:18)",
+                "diff": "- 'Alaa Tester'\n+ 'user'\n"
+              },
+              "uuid": "6e3f9e3a-e136-477e-94ba-a9622336baee",
+              "parentUUID": "0223b639-7ce5-4c32-a74d-dd4defc89f70",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify User Cannot Login with wrong Credentials",
+              "fullTitle": "Login Feature With POM Verify User Cannot Login with wrong Credentials",
+              "timedOut": null,
+              "duration": 2301,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.visitLoginPage();\nloginPage.fillLoginValuesAndClickBtn('Admin', 'Admin');\nloginPage.verifyLoginFailure();",
+              "err": {},
+              "uuid": "f73b2a49-309c-4a73-992d-efbd379c6cf1",
+              "parentUUID": "0223b639-7ce5-4c32-a74d-dd4defc89f70",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f73b2a49-309c-4a73-992d-efbd379c6cf1"
+          ],
+          "failures": [
+            "6e3f9e3a-e136-477e-94ba-a9622336baee"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 9993,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "a69d8ab0-6ae2-46be-b0b0-562786155331",
+      "title": "",
+      "fullFile": "cypress/e2e/login.cy.js",
+      "file": "cypress/e2e/login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "29edf884-b725-44a2-85ca-b91db49117a2",
+          "title": "Login Feature",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify User Can Login with right Credentials",
+              "fullTitle": "Login Feature Verify User Can Login with right Credentials",
+              "timedOut": null,
+              "duration": 3932,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get('[src=\"/web/images/ohrm_branding.png?v=1711595107870\"]').should('be.visible');\ncy.get('[placeholder=\"Username\"]').type('Admin');\ncy.get('[placeholder=\"Password\"]').type('admin123');\ncy.get('[type=\"submit\"]').click();\ncy.url().should('include', 'dashboard');",
+              "err": {},
+              "uuid": "849dba77-e640-42ba-ba26-949083029dc5",
+              "parentUUID": "29edf884-b725-44a2-85ca-b91db49117a2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify User Cannot Login with wrong Credentials",
+              "fullTitle": "Login Feature Verify User Cannot Login with wrong Credentials",
+              "timedOut": null,
+              "duration": 1581,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get('[src=\"/web/images/ohrm_branding.png?v=1711595107870\"]').should('be.visible');\ncy.get('[placeholder=\"Username\"]').type('Admin123');\ncy.get('[placeholder=\"Password\"]').type('admin123');\ncy.get('[type=\"submit\"]').click();\ncy.url().should('include', 'auth/login');",
+              "err": {},
+              "uuid": "786f58c3-0f75-4c0a-be4f-a530ba4defd5",
+              "parentUUID": "29edf884-b725-44a2-85ca-b91db49117a2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "849dba77-e640-42ba-ba26-949083029dc5",
+            "786f58c3-0f75-4c0a-be4f-a530ba4defd5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5513,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "2562939b-be05-45d5-8195-a8de371224bc",
+      "title": "",
+      "fullFile": "cypress/e2e/loginWithCypressCommand.cy.js",
+      "file": "cypress/e2e/loginWithCypressCommand.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bfe32190-cc4a-4541-b436-7f2eb22f85d3",
+          "title": "Login Feature With the use of cypress Command",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify User Can Login with right Credentials",
+              "fullTitle": "Login Feature With the use of cypress Command Verify User Can Login with right Credentials",
+              "timedOut": null,
+              "duration": 7634,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.login(Cypress.env('USERNAME'), Cypress.env('PASSWORD'));\nloginPage.verifyLoginSuccess();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<p.oxd-userdropdown-name>' to contain text 'user', but the text was 'kZheZGsnjTCcobjuL Tester'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<p.oxd-userdropdown-name>' to contain text 'user', but the text was 'kZheZGsnjTCcobjuL Tester'\n    at LoginPage.verifyLoginSuccess (webpack://spreadtest/./cypress/support/POM/loginData.js:21:50)\n    at Context.eval (webpack://spreadtest/./cypress/e2e/loginWithCypressCommand.cy.js:9:18)",
+                "diff": "- 'kZheZGsnjTCcobjuL Tester'\n+ 'user'\n"
+              },
+              "uuid": "85446d83-0c72-4655-9699-3b02d5214b17",
+              "parentUUID": "bfe32190-cc4a-4541-b436-7f2eb22f85d3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify User Cannot Login with wrong Credentials",
+              "fullTitle": "Login Feature With the use of cypress Command Verify User Cannot Login with wrong Credentials",
+              "timedOut": null,
+              "duration": 2004,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const username = 'Admin';\nconst password = 'admin';\ncy.login(username, password);\nloginPage.verifyLoginFailure();",
+              "err": {},
+              "uuid": "67abdbf9-716c-493b-9d65-837170f6bad6",
+              "parentUUID": "bfe32190-cc4a-4541-b436-7f2eb22f85d3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "67abdbf9-716c-493b-9d65-837170f6bad6"
+          ],
+          "failures": [
+            "85446d83-0c72-4655-9699-3b02d5214b17"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 9638,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "13aed274-330e-4ea2-8301-c2d04e1dbf7f",
+      "title": "",
+      "fullFile": "cypress/e2e/loginWithPom.cy.js",
+      "file": "cypress/e2e/loginWithPom.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "78c749fc-54bb-408a-8539-8db1eb20b398",
+          "title": "Login Feature With POM",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify User Can Login with right Credentials",
+              "fullTitle": "Login Feature With POM Verify User Can Login with right Credentials",
+              "timedOut": null,
+              "duration": 7277,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.visitLoginPage();\nloginPage.fillLoginValuesAndClickBtn(Cypress.env('USERNAME'), Cypress.env('PASSWORD'));\nloginPage.verifyLoginSuccess();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<p.oxd-userdropdown-name>' to contain text 'user', but the text was 'kZheZGsnjTCcobjuL Tester'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<p.oxd-userdropdown-name>' to contain text 'user', but the text was 'kZheZGsnjTCcobjuL Tester'\n    at LoginPage.verifyLoginSuccess (webpack://spreadtest/./cypress/support/POM/loginData.js:21:50)\n    at Context.eval (webpack://spreadtest/./cypress/e2e/loginWithPom.cy.js:11:18)",
+                "diff": "- 'kZheZGsnjTCcobjuL Tester'\n+ 'user'\n"
+              },
+              "uuid": "e685476b-b2e6-4c0f-b363-aeeb8e9b2803",
+              "parentUUID": "78c749fc-54bb-408a-8539-8db1eb20b398",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify User Cannot Login with wrong Credentials",
+              "fullTitle": "Login Feature With POM Verify User Cannot Login with wrong Credentials",
+              "timedOut": null,
+              "duration": 2167,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.visitLoginPage();\nloginPage.fillLoginValuesAndClickBtn('Admin', 'Admin');\nloginPage.verifyLoginFailure();",
+              "err": {},
+              "uuid": "f9892566-bf68-4785-9299-2ead5829656d",
+              "parentUUID": "78c749fc-54bb-408a-8539-8db1eb20b398",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f9892566-bf68-4785-9299-2ead5829656d"
+          ],
+          "failures": [
+            "e685476b-b2e6-4c0f-b363-aeeb8e9b2803"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 9444,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

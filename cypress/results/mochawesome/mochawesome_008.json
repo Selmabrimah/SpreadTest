@@ -1,0 +1,131 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-05-11T14:41:00.077Z",
+    "end": "2024-05-11T14:41:09.579Z",
+    "duration": 9502,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "13aed274-330e-4ea2-8301-c2d04e1dbf7f",
+      "title": "",
+      "fullFile": "cypress/e2e/loginWithPom.cy.js",
+      "file": "cypress/e2e/loginWithPom.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "78c749fc-54bb-408a-8539-8db1eb20b398",
+          "title": "Login Feature With POM",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify User Can Login with right Credentials",
+              "fullTitle": "Login Feature With POM Verify User Can Login with right Credentials",
+              "timedOut": null,
+              "duration": 7277,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.visitLoginPage();\nloginPage.fillLoginValuesAndClickBtn(Cypress.env('USERNAME'), Cypress.env('PASSWORD'));\nloginPage.verifyLoginSuccess();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<p.oxd-userdropdown-name>' to contain text 'user', but the text was 'kZheZGsnjTCcobjuL Tester'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<p.oxd-userdropdown-name>' to contain text 'user', but the text was 'kZheZGsnjTCcobjuL Tester'\n    at LoginPage.verifyLoginSuccess (webpack://spreadtest/./cypress/support/POM/loginData.js:21:50)\n    at Context.eval (webpack://spreadtest/./cypress/e2e/loginWithPom.cy.js:11:18)",
+                "diff": "- 'kZheZGsnjTCcobjuL Tester'\n+ 'user'\n"
+              },
+              "uuid": "e685476b-b2e6-4c0f-b363-aeeb8e9b2803",
+              "parentUUID": "78c749fc-54bb-408a-8539-8db1eb20b398",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify User Cannot Login with wrong Credentials",
+              "fullTitle": "Login Feature With POM Verify User Cannot Login with wrong Credentials",
+              "timedOut": null,
+              "duration": 2167,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.visitLoginPage();\nloginPage.fillLoginValuesAndClickBtn('Admin', 'Admin');\nloginPage.verifyLoginFailure();",
+              "err": {},
+              "uuid": "f9892566-bf68-4785-9299-2ead5829656d",
+              "parentUUID": "78c749fc-54bb-408a-8539-8db1eb20b398",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f9892566-bf68-4785-9299-2ead5829656d"
+          ],
+          "failures": [
+            "e685476b-b2e6-4c0f-b363-aeeb8e9b2803"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 9444,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

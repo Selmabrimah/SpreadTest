@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-05-11T14:48:16.295Z",
+    "end": "2024-05-11T14:48:21.730Z",
+    "duration": 5435,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5b006838-f22a-4187-923b-35bff19c46ce",
+      "title": "",
+      "fullFile": "cypress/e2e/loginWithPom.cy.js",
+      "file": "cypress/e2e/loginWithPom.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fa47d8be-807c-4fe6-afae-fe22867467ee",
+          "title": "Login Feature With POM",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify User Can Login with right Credentials",
+              "fullTitle": "Login Feature With POM Verify User Can Login with right Credentials",
+              "timedOut": null,
+              "duration": 3447,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.visitLoginPage();\nloginPage.fillLoginValuesAndClickBtn(Cypress.env('USERNAME'), Cypress.env('PASSWORD'));\nloginPage.verifyLoginSuccess();",
+              "err": {},
+              "uuid": "1245383c-f953-483a-8904-2fdb057244d0",
+              "parentUUID": "fa47d8be-807c-4fe6-afae-fe22867467ee",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify User Cannot Login with wrong Credentials",
+              "fullTitle": "Login Feature With POM Verify User Cannot Login with wrong Credentials",
+              "timedOut": null,
+              "duration": 1942,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.visitLoginPage();\nloginPage.fillLoginValuesAndClickBtn('Admin', 'Admin');\nloginPage.verifyLoginFailure();",
+              "err": {},
+              "uuid": "2ab5502c-f2d5-4c66-845b-c043f0fd5671",
+              "parentUUID": "fa47d8be-807c-4fe6-afae-fe22867467ee",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1245383c-f953-483a-8904-2fdb057244d0",
+            "2ab5502c-f2d5-4c66-845b-c043f0fd5671"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5389,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

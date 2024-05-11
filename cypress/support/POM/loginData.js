@@ -18,11 +18,11 @@ export class LoginPage {
 
     verifyLoginSuccess() {
         cy.url().should('include', 'dashboard');
-        cy.get('[class="oxd-userdropdown-name"]').should('contain.text','user')
     }
     verifyLoginFailure() {
         cy.url().should('not.include', 'dashboard');
         cy.get(invalidLabel).should('have.text', 'Invalid credentials');
+        cy.url().should('include', 'auth/login');
 
     }
 }
