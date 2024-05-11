@@ -18,7 +18,7 @@ jobs:
           start: npm run testdemo:headless
 
       - name: Generate Mochawesome report
-        run: npm run cypress-regression-run:demo
+        run: npm run mochawesome-merge
 
       - name: Archive Mochawesome report
         uses: actions/upload-artifact@v2
