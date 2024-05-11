@@ -1,6 +1,8 @@
-name: E2E for cypress on Chrome
+name: E2E for cypress
 
-on: [push]
+on:
+  push:
+  workflow_dispatch:
 
 jobs:
   install:
@@ -12,6 +14,5 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v3
         with:
-          browser: chrome
           build: npm install
           start: npm run testdemo:headless
