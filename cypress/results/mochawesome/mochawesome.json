@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-05-11T15:30:09.130Z",
+    "end": "2024-05-11T15:30:15.697Z",
+    "duration": 6567,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "dc1d0118-e1b9-499e-8cc0-a512af0bcb4f",
+      "title": "",
+      "fullFile": "cypress/e2e/login.cy.js",
+      "file": "cypress/e2e/login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e6694e57-3fee-46fd-8144-d1308810854c",
+          "title": "Login Feature",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify User Can Login with right Credentials",
+              "fullTitle": "Login Feature Verify User Can Login with right Credentials",
+              "timedOut": null,
+              "duration": 3637,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get('[src=\"/web/images/ohrm_branding.png?v=1711595107870\"]').should('be.visible');\ncy.get('[placeholder=\"Username\"]').type('Admin');\ncy.get('[placeholder=\"Password\"]').type('admin123');\ncy.get('[type=\"submit\"]').click();\ncy.url().should('include', 'dashboard');",
+              "err": {},
+              "uuid": "848c5352-209a-48eb-803e-c6e7e595d5c8",
+              "parentUUID": "e6694e57-3fee-46fd-8144-d1308810854c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify User Cannot Login with wrong Credentials",
+              "fullTitle": "Login Feature Verify User Cannot Login with wrong Credentials",
+              "timedOut": null,
+              "duration": 2901,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get('[src=\"/web/images/ohrm_branding.png?v=1711595107870\"]').should('be.visible');\ncy.get('[placeholder=\"Username\"]').type('Admin123');\ncy.get('[placeholder=\"Password\"]').type('admin123');\ncy.get('[type=\"submit\"]').click();\ncy.url().should('include', 'auth/login');",
+              "err": {},
+              "uuid": "e16f9c4d-328f-404c-b780-170eaf7a517e",
+              "parentUUID": "e6694e57-3fee-46fd-8144-d1308810854c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "848c5352-209a-48eb-803e-c6e7e595d5c8",
+            "e16f9c4d-328f-404c-b780-170eaf7a517e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6538,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

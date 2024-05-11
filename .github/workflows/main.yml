@@ -16,3 +16,12 @@ jobs:
         with:
           build: npm install
           start: npm run testdemo:headless
+
+      - name: Generate Mochawesome report
+        run: npm run cypress-regression-run:demo
+
+      - name: Archive Mochawesome report
+        uses: actions/upload-artifact@v2
+        with:
+          name: mochawesome-report
+          path: cypress/results/mochawesome-report
