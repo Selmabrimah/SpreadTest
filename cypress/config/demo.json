@@ -1,0 +1,11 @@
+{
+  "baseUrl":"https://opensource-demo.orangehrmlive.com",
+  "env":{
+    "environment":"demo",
+    "USERNAME":"Admin",
+    "PASSWORD":"admin123"
+
+  }
+
+
+}

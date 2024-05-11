@@ -1,0 +1,9 @@
+{
+  "baseUrl":"https://opensource-stage.orangehrmlive.com",
+  "env":{
+    "environment":"stage",
+    "USERNAME":"SelmaStage",
+    "PASSWORD":"Selma123Stage"
+
+  }
+}
