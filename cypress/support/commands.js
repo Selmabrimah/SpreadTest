@@ -23,3 +23,17 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+const logo ='[src="/web/images/ohrm_branding.png?v=1711595107870"]'
+const userNameField='[placeholder="Username"]'
+const passwordField='[placeholder="Password"]'
+const loginBtn='[type="submit"]'
+
+Cypress.Commands.add('login', (username, password) => {
+    cy.visit('/');
+    cy.get(logo).should('be.visible');
+    cy.get(userNameField).type(username);
+    cy.get(passwordField).type(password);
+    cy.get(loginBtn).click();
+
+})
