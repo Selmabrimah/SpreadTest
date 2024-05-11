@@ -1,6 +1,8 @@
 name: E2E for cypress on Chrome
 
-on: [push]
+on:
+  push:
+  workflow_dispatch:
 
 jobs:
   install:
@@ -15,3 +17,8 @@ jobs:
           browser: chrome
           build: npm install
           start: npm run testdemo:headless
+
+      - name: Generate test reports
+        run: |
+          npm run junit-merge
+          npm run mochawesome-merge
