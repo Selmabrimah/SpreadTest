@@ -12,8 +12,6 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v3
         with:
-          project: ./cypress
           browser: chrome
-          build: npm install 
-          start: npm testdemo:headless
-       
+          build: npm install
+          start: npm run testdemo:headless
