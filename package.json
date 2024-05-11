@@ -8,12 +8,24 @@
     "testdemo:headless": "cypress run --env configFile=demo",
     "teststage:headless": "cypress run --env configFile=stage",
     "testdemo:headed": "cypress open --env configFile=demo",
-    "teststage:headed": "cypress open --env configFile=stage"
+    "teststage:headed": "cypress open --env configFile=stage",
+    "junit-merge":"npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
+    "delete-junit-report":"rm -rf cypress/results/junit/results.xml",
+    "delete-results": "rm -rf cypress/results/* || true",
+    "mochawesome-merge": "npx mochawesome-merge cypress/results/mochawesome/*.json > cypress/results/mochawesome/mochaawesome.json && npx marge cypress/results/mochawesome/mochaawesome.json",
+    "delete-mochawesome-report": "rm -rf mochawesome-report/* || true && rm -rf cypress/results/mochawesome/* || true",
+    "cypress-regression-run:demo": "npm run delete-results && npm run delete-mochawesome-report && npm run testdemo:headless && npm run mochawesome-merge",
+    "cypress-regression-run:stage": "npm run delete-results && npm run delete-mochawesome-report && npm run teststage:headless && npm run mochawesome-merge"
   },
   "author": "Selma Brimah",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^13.9.0"
+    "cypress": "^13.9.0",
+    "cypress-multi-reporters": "^1.6.4",
+    "mocha-junit-reporter": "^2.2.1",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0"
   },
   "dependencies": {
     "fs-extra": "^11.2.0",
