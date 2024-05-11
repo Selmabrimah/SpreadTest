@@ -1,0 +1,24 @@
+# OS generated files #
+######################
+.DS_Store
+.idea
+
+# Cypress generated files #
+###########################
+/cypress/screenshots
+/cypress/videos
+/mochawesome-report/*
+/result/*
+reports/
+
+# Node.js generated files #
+###########################
+/node_modules
+/package-lock.json
+
+# Logs #
+########
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
