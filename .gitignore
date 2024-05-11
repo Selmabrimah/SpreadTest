@@ -8,7 +8,7 @@
 /cypress/screenshots
 /cypress/videos
 /mochawesome-report/*
-/results/*
+/results/
 reports/
 
 # Node.js generated files #
