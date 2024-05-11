@@ -8,14 +8,25 @@ jobs:
   install:
     runs-on: ubuntu-latest
     steps:
+      - name: Clear cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Install dependencies
+        run: npm install
+
       - name: Cypress run
-        uses: cypress-io/github-action@v3
-        with:
-          build: npm install
-          start: npm run testdemo:headless
+        run: npm run testdemo:headless
 
       - name: Generate Mochawesome report
         run: npm run mochawesome-merge
