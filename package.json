@@ -4,11 +4,19 @@
   "description": "Challenge for Technical interview",
   "main": "index.js",
   "scripts": {
-    "test": "cypress open"
+    "test": "cypress open",
+    "testdemo:headless": "cypress run --env configFile=demo",
+    "teststage:headless": "cypress run --env configFile=stage",
+    "testdemo:headed": "cypress open --env configFile=demo",
+    "teststage:headed": "cypress open --env configFile=stage"
   },
   "author": "Selma Brimah",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^13.9.0"
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0",
+    "path": "^0.12.7"
   }
 }
