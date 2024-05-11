@@ -1,0 +1,14 @@
+{
+  "name": "spreadtest",
+  "version": "1.0.0",
+  "description": "Challenge for Technical interview",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Selma Brimah",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.9.0"
+  }
+}
