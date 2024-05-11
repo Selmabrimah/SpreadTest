@@ -14,6 +14,6 @@ describe('Login Feature', () => {
       cy.get('[placeholder="Username"]').type('Admin123')
       cy.get('[placeholder="Password"]').type('admin123')
       cy.get('[type="submit"]').click()
-      cy.url().should('include', 'dashboard');
+      cy.url().should('include', 'auth/login');
     })
   })

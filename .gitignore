@@ -14,7 +14,6 @@ reports/
 # Node.js generated files #
 ###########################
 /node_modules
-/package-lock.json
 
 # Logs #
 ########
