@@ -21,12 +21,17 @@ module.exports = defineConfig({
     PASSWORD:'admin123',
     host:'https://opensource-demo.orangehrmlive.com'
   },
+    reporter: 'cypress-multi-reporters',
+    reporterOptions: {
+  configFile: 'reporter-config.json',
+},
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
       const file = config.env.configFile || ''
       return getConfigurationByFile(file)
     },
-    baseUrl:'https://opensource-demo.orangehrmlive.com'
+    baseUrl:'https://opensource-demo.orangehrmlive.com',
+    specPattern:'cypress/e2e/**/*.cy.{js,jsx,ts,tsx}',
   },
 });
