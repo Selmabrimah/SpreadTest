@@ -25,7 +25,7 @@ export class UserActionPage{
         cy.get(loginLocator).click()
         cy.url().should('include','/login')
         cy.get(emailField).type(email)
-        cy.get(passwordField).type(password)
+        cy.get(passwordField).type(password,{log:false})
         cy.get(loginBtn).click()
         cy.wait(3000)
 
