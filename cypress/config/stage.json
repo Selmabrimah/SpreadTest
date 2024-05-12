@@ -1,8 +1,7 @@
 {
-  "baseUrl":"https://opensource-stage.orangehrmlive.com",
+  "baseUrl":"https://conduit.stage.bondaracademy.com",
   "env":{
     "environment":"stage",
-    "USERNAME":"SelmaStage",
     "PASSWORD":"Selma123Stage"
 
   }
