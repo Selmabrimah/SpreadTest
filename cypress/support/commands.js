@@ -37,7 +37,7 @@ Cypress.Commands.add('signUp', (username,email,password) => {
     cy.url().should('include','/register')
     cy.get(userNameField).type(username);
     cy.get(emailField).type(email);
-    cy.get(passwordField).type(password);
+    cy.get(passwordField).type(password,{log:false});
     cy.get(loginBtn).click();
     cy.wait(3000);
     cy.clearAllLocalStorage()
@@ -47,7 +47,7 @@ Cypress.Commands.add('signUp', (username,email,password) => {
 Cypress.Commands.add('login', (email,password) => {
     cy.visit('/login')
     cy.get(emailField).type(email);
-    cy.get(passwordField).type(password);
+    cy.get(passwordField).type(password,{log:false});
     cy.get(loginBtn).click();
     cy.wait(3000);
 })
