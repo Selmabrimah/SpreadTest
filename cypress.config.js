@@ -17,9 +17,7 @@ module.exports = defineConfig({
   viewportWidth:1600,
   video:false,
   env:{
-    USERNAME:'Admin',
     PASSWORD:'admin123',
-    host:'https://opensource-demo.orangehrmlive.com'
   },
     reporter: 'cypress-multi-reporters',
     reporterOptions: {
@@ -31,7 +29,7 @@ module.exports = defineConfig({
       const file = config.env.configFile || ''
       return getConfigurationByFile(file)
     },
-    baseUrl:'https://opensource-demo.orangehrmlive.com',
+    baseUrl:'https://conduit.bondaracademy.com',
     specPattern:'cypress/e2e/**/*.cy.{js,jsx,ts,tsx}',
   },
 });

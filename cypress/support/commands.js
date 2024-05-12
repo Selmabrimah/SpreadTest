@@ -24,16 +24,30 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-const logo ='[src="/web/images/ohrm_branding.png?v=1711595107870"]'
+const registerBtn='[href="/register"]'
 const userNameField='[placeholder="Username"]'
+const emailField='[placeholder="Email"]'
 const passwordField='[placeholder="Password"]'
-const loginBtn='[type="submit"]'
+const loginBtn='button[type="submit"]'
 
-Cypress.Commands.add('login', (username, password) => {
+
+Cypress.Commands.add('signUp', (username,email,password) => {
     cy.visit('/');
-    cy.get(logo).should('be.visible');
+    cy.get(registerBtn).click()
+    cy.url().should('include','/register')
     cy.get(userNameField).type(username);
+    cy.get(emailField).type(email);
     cy.get(passwordField).type(password);
     cy.get(loginBtn).click();
+    cy.wait(3000);
+    cy.clearAllLocalStorage()
+})
 
+
+Cypress.Commands.add('login', (email,password) => {
+    cy.visit('/login')
+    cy.get(emailField).type(email);
+    cy.get(passwordField).type(password);
+    cy.get(loginBtn).click();
+    cy.wait(3000);
 })
